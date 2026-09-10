@@ -4,25 +4,524 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>نور اسلامي خپرونې | Ahmad Abu-dujanah</title>
+  <title>ابودجانه د اسلامي خپرونو مرکز</title>
 
-  <meta name="description"
-        content="قرآن کریم، حدیثونه، اسلامي ویناوې، مقالې او دعاګانې.">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-  <link rel="stylesheet" href="style.css">
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Tahoma,Arial,sans-serif;
+      background:#f5f8f6;
+      color:#18251e;
+      line-height:1.8;
+    }
+
+    .container{
+      width:92%;
+      max-width:1150px;
+      margin:auto;
+    }
+
+    /* HEADER */
+    .header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:#fff;
+      box-shadow:0 3px 20px rgba(0,0,0,.08);
+    }
+
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .logo{
+      text-decoration:none;
+      color:#123d2a;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo-icon{
+      width:50px;
+      height:50px;
+      border-radius:15px;
+      background:#123d2a;
+      color:#e2c56f;
+      display:grid;
+      place-items:center;
+      font-size:27px;
+    }
+
+    .logo strong{
+      display:block;
+      font-size:19px;
+    }
+
+    .logo small{
+      display:block;
+      color:#9a772d;
+      font-size:12px;
+    }
+
+    nav{
+      display:flex;
+      gap:5px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#26372e;
+      padding:9px 11px;
+      border-radius:9px;
+      font-size:14px;
+    }
+
+    nav a:hover{
+      background:#e8f2ec;
+      color:#123d2a;
+    }
+
+    .menu-btn{
+      display:none;
+      border:0;
+      background:#123d2a;
+      color:white;
+      font-size:25px;
+      padding:5px 12px;
+      border-radius:8px;
+    }
+
+    /* HERO */
+    .hero{
+      padding:90px 0;
+      background:linear-gradient(135deg,#0b3523,#1d6040);
+      color:white;
+    }
+
+    .hero-content{
+      display:grid;
+      grid-template-columns:1.4fr .8fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .badge{
+      display:inline-block;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.2);
+      padding:6px 14px;
+      border-radius:30px;
+      color:#f0d78a;
+    }
+
+    .hero h1{
+      font-size:46px;
+      line-height:1.35;
+      margin:18px 0;
+    }
+
+    .hero h1 span{
+      display:block;
+      color:#e2c56f;
+    }
+
+    .hero p{
+      font-size:18px;
+      color:#e3eee7;
+      max-width:650px;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:11px 20px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .primary{
+      background:#d7b65e;
+      color:#17231d;
+    }
+
+    .ghost{
+      color:white;
+      background:#ffffff14;
+      border:1px solid #ffffff44;
+    }
+
+    .hero-card{
+      background:#ffffff12;
+      border:1px solid #ffffff25;
+      padding:35px;
+      border-radius:25px;
+      text-align:center;
+    }
+
+    .moon{
+      font-size:70px;
+      color:#e2c56f;
+    }
+
+    .hero-card h3{
+      color:#f2dc9c;
+      font-size:22px;
+    }
+
+    /* STATS */
+    .stats{
+      background:#fff;
+      box-shadow:0 5px 20px #0000000b;
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+    }
+
+    .stats-grid div{
+      padding:25px;
+      text-align:center;
+      border-left:1px solid #e8eee9;
+    }
+
+    .stats-grid strong{
+      display:block;
+      color:#123d2a;
+      font-size:29px;
+    }
+
+    .stats-grid span{
+      color:#68766d;
+    }
+
+    /* SECTIONS */
+    .section{
+      padding:75px 0;
+    }
+
+    .alt{
+      background:#edf5f0;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      margin-bottom:30px;
+    }
+
+    .eyebrow{
+      color:#a07b29;
+      font-weight:bold;
+    }
+
+    .section-head h2,
+    .media-grid h2,
+    .contact-box h2{
+      color:#123d2a;
+      font-size:30px;
+    }
+
+    .section-icon{
+      font-size:40px;
+    }
+
+    /* CARDS */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .card{
+      background:#fff;
+      border-radius:18px;
+      padding:28px;
+      box-shadow:0 7px 25px #0000000b;
+      border:1px solid #e3ebe6;
+      transition:.25s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 12px 30px #00000015;
+    }
+
+    .card h3{
+      color:#123d2a;
+      margin:8px 0;
+    }
+
+    .card p{
+      color:#66736b;
+    }
+
+    .card button{
+      margin-top:16px;
+      border:0;
+      background:#123d2a;
+      color:#fff;
+      padding:9px 17px;
+      border-radius:8px;
+      cursor:pointer;
+      font-family:inherit;
+    }
+
+    .number{
+      color:#b18a34;
+      font-weight:bold;
+    }
+
+    .card a{
+      display:inline-block;
+      margin-top:15px;
+      color:#a07b29;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    /* HADITH */
+    .quote{
+      text-align:center;
+      max-width:800px;
+    }
+
+    .quote h2{
+      color:#123d2a;
+      font-size:32px;
+      margin:15px 0;
+    }
+
+    .quote p{
+      font-size:20px;
+    }
+
+    /* MEDIA */
+    .media-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .player{
+      background:#123d2a;
+      color:white;
+      padding:35px;
+      border-radius:20px;
+    }
+
+    .play{
+      width:60px;
+      height:60px;
+      display:grid;
+      place-items:center;
+      background:#d6b55c;
+      color:#123d2a;
+      border-radius:50%;
+      margin-bottom:20px;
+    }
+
+    .player span{
+      display:block;
+      color:#c8d7cf;
+      font-size:13px;
+    }
+
+    .progress{
+      height:6px;
+      background:#ffffff33;
+      border-radius:10px;
+      margin-top:20px;
+    }
+
+    /* DUA */
+    .dua{
+      background:#fff;
+      padding:25px;
+      margin:15px 0;
+      border-right:5px solid #c5a54e;
+      border-radius:12px;
+      box-shadow:0 5px 15px #00000009;
+    }
+
+    .dua h3{
+      color:#123d2a;
+      font-size:25px;
+    }
+
+    /* CONTACT */
+    .contact{
+      background:#123d2a;
+      color:white;
+    }
+
+    .contact-box{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .contact-box h2{
+      color:white;
+      margin:10px 0;
+    }
+
+    .contact-box p{
+      color:#d5e2db;
+    }
+
+    form{
+      display:grid;
+      gap:12px;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      border:0;
+      outline:none;
+      padding:13px;
+      border-radius:9px;
+      font-family:inherit;
+    }
+
+    form button{
+      border:0;
+      cursor:pointer;
+      font-family:inherit;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#092719;
+      color:white;
+    }
+
+    .footer{
+      min-height:110px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+
+    .footer h3{
+      color:#e2c56f;
+    }
+
+    .footer p{
+      color:#bdcfc5;
+    }
+
+    /* TOAST */
+    #toast{
+      display:none;
+      position:fixed;
+      bottom:25px;
+      left:50%;
+      transform:translateX(-50%);
+      background:#123d2a;
+      color:white;
+      padding:12px 22px;
+      border-radius:10px;
+      box-shadow:0 5px 25px #0004;
+      z-index:2000;
+    }
+
+    /* MOBILE */
+    @media(max-width:850px){
+
+      .menu-btn{
+        display:block;
+      }
+
+      nav{
+        display:none;
+        position:absolute;
+        top:78px;
+        right:4%;
+        left:4%;
+        background:white;
+        padding:12px;
+        border-radius:12px;
+        box-shadow:0 8px 25px #0002;
+        flex-direction:column;
+      }
+
+      nav.open{
+        display:flex;
+      }
+
+      nav a{
+        text-align:center;
+      }
+
+      .hero{
+        padding:60px 0;
+      }
+
+      .hero-content,
+      .media-grid,
+      .contact-box{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:35px;
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .footer{
+        flex-direction:column;
+        text-align:center;
+        padding:25px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header class="header">
   <div class="container nav">
 
     <a class="logo" href="#home">
       <span class="logo-icon">☪</span>
 
-      <span class="logo-text">
-        <strong>Ahmad Abu-dujanah</strong>
-        <small>نور اسلامي خپرونې</small>
+      <span>
+        <strong>ابودجانه</strong>
+        <small>د اسلامي خپرونو مرکز</small>
       </span>
     </a>
 
@@ -32,6 +531,7 @@
       <a href="#home">کور</a>
       <a href="#quran">قرآن کریم</a>
       <a href="#hadith">حدیث</a>
+      <a href="#fiqh">فقه</a>
       <a href="#lectures">ویناوې</a>
       <a href="#articles">مقالې</a>
       <a href="#media">رسنۍ</a>
@@ -43,63 +543,49 @@
 </header>
 
 
-<main>
-
+<!-- HOME -->
 <section id="home" class="hero">
+  <div class="container hero-content">
 
-  <div class="hero-content container">
-
-    <div class="hero-text">
-
+    <div>
       <span class="badge">
         بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ
       </span>
 
       <h1>
-        اسلامي پوهه،
-        <span>رڼا او لارښوونه</span>
+        ابودجانه
+        <span>د اسلامي خپرونو مرکز</span>
       </h1>
 
       <p>
-        قرآن کریم، احادیث، اسلامي ویناوې،
+        قرآن کریم، احادیث، فقه، اسلامي ویناوې،
         مقالې، دعاګانې او ګټور دیني مطالب
         په یوه ښکلي ځای کې.
       </p>
 
       <div class="actions">
         <a class="btn primary" href="#quran">
-          قرآن کریم وګورئ
+          قرآن کریم
         </a>
 
-        <a class="btn ghost" href="#lectures">
-          اسلامي ویناوې
+        <a class="btn ghost" href="#fiqh">
+          اسلامي فقه
         </a>
       </div>
-
     </div>
 
-
     <div class="hero-card">
-
       <div class="moon">☪</div>
-
-      <h3>
-        وَقُل رَّبِّ زِدْنِي عِلْمًا
-      </h3>
-
-      <p>
-        او ووایه: اې زما ربه! زما علم زیات کړه.
-      </p>
-
+      <h3>وَقُل رَّبِّ زِدْنِي عِلْمًا</h3>
+      <p>اې زما ربه! زما علم زیات کړه.</p>
     </div>
 
   </div>
-
 </section>
 
 
+<!-- STATS -->
 <section class="stats">
-
   <div class="container stats-grid">
 
     <div>
@@ -123,25 +609,21 @@
     </div>
 
   </div>
-
 </section>
 
 
+<!-- QURAN -->
 <section id="quran" class="section">
-
   <div class="container">
 
     <div class="section-head">
-
       <div>
         <span class="eyebrow">قرآن کریم</span>
         <h2>د الله تعالی کتاب</h2>
       </div>
 
       <span class="section-icon">📖</span>
-
     </div>
-
 
     <div class="cards">
 
@@ -149,40 +631,39 @@
         <span class="number">01</span>
         <h3>سورة الفاتحة</h3>
         <p>د قرآن کریم لومړی سورت.</p>
-        <button onclick="showMessage('د سورة الفاتحة برخه به ژر اضافه شي.')">
+
+        <button onclick="showMessage('د سورة الفاتحة برخه به دلته پرانیستل شي.')">
           لوستل
         </button>
       </article>
-
 
       <article class="card">
         <span class="number">02</span>
         <h3>سورة البقرة</h3>
         <p>د قرآن کریم تر ټولو اوږد سورت.</p>
-        <button onclick="showMessage('د سورة البقرة برخه به ژر اضافه شي.')">
+
+        <button onclick="showMessage('د سورة البقرة برخه به دلته پرانیستل شي.')">
           لوستل
         </button>
       </article>
-
 
       <article class="card">
         <span class="number">03</span>
         <h3>سورة الإخلاص</h3>
         <p>د توحید په اړه مبارک سورت.</p>
-        <button onclick="showMessage('د سورة الإخلاص برخه به ژر اضافه شي.')">
+
+        <button onclick="showMessage('د سورة الإخلاص برخه به دلته پرانیستل شي.')">
           لوستل
         </button>
       </article>
 
     </div>
-
   </div>
-
 </section>
 
 
+<!-- HADITH -->
 <section id="hadith" class="section alt">
-
   <div class="container quote">
 
     <span class="eyebrow">حدیث شریف</span>
@@ -192,87 +673,174 @@
     </h2>
 
     <p>
-      «اعمال د نیتونو له مخې دي.»
+      اعمال د نیتونو له مخې دي.
     </p>
 
-    <small>
-      — صحیح البخاري
-    </small>
+    <small>— صحیح البخاري</small>
 
   </div>
-
 </section>
 
 
-<section id="lectures" class="section">
-
+<!-- FIQH -->
+<section id="fiqh" class="section">
   <div class="container">
 
     <div class="section-head">
+      <div>
+        <span class="eyebrow">اسلامي فقه</span>
+        <h2>د فقهې مهمې موضوعات</h2>
+      </div>
 
+      <span class="section-icon">📚</span>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <span class="number">01</span>
+        <h3>🧼 طهارت</h3>
+        <p>
+          اودس، غسل، تیمم او د پاکوالي مهم مسائل.
+        </p>
+
+        <button onclick="showMessage('د طهارت تفصیلي معلومات به دلته پرانیستل شي.')">
+          مطالعه
+        </button>
+      </article>
+
+
+      <article class="card">
+        <span class="number">02</span>
+        <h3>🕌 لمونځ</h3>
+        <p>
+          د لمانځه شرایط، ارکان، واجبات او مهم مسائل.
+        </p>
+
+        <button onclick="showMessage('د لمانځه تفصیلي معلومات به دلته پرانیستل شي.')">
+          مطالعه
+        </button>
+      </article>
+
+
+      <article class="card">
+        <span class="number">03</span>
+        <h3>🌙 روژه</h3>
+        <p>
+          د روژې احکام، شرایط او مهم مسائل.
+        </p>
+
+        <button onclick="showMessage('د روژې تفصیلي معلومات به دلته پرانیستل شي.')">
+          مطالعه
+        </button>
+      </article>
+
+
+      <article class="card">
+        <span class="number">04</span>
+        <h3>💰 زکات</h3>
+        <p>
+          د زکات نصاب، شرایط او اړوند احکام.
+        </p>
+
+        <button onclick="showMessage('د زکات تفصیلي معلومات به دلته پرانیستل شي.')">
+          مطالعه
+        </button>
+      </article>
+
+
+      <article class="card">
+        <span class="number">05</span>
+        <h3>🕋 حج</h3>
+        <p>
+          د حج فرضونه، واجبات او مهم شرعي مسائل.
+        </p>
+
+        <button onclick="showMessage('د حج تفصیلي معلومات به دلته پرانیستل شي.')">
+          مطالعه
+        </button>
+      </article>
+
+
+      <article class="card">
+        <span class="number">06</span>
+        <h3>📖 نور فقهي مسائل</h3>
+        <p>
+          د مسلمان د ورځني ژوند مهم فقهي مسائل.
+        </p>
+
+        <button onclick="showMessage('نور فقهي مسائل به دلته اضافه شي.')">
+          مطالعه
+        </button>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- LECTURES -->
+<section id="lectures" class="section alt">
+  <div class="container">
+
+    <div class="section-head">
       <div>
         <span class="eyebrow">اسلامي ویناوې</span>
         <h2>ګټورې دیني خپرونې</h2>
       </div>
 
       <span class="section-icon">🎙️</span>
-
     </div>
-
 
     <div class="cards">
 
-      <article class="card media-card">
+      <article class="card">
         <div class="media-icon">▶</div>
         <h3>د ایمان اهمیت</h3>
-        <p>د ایمان د پیاوړتیا په اړه لنډه وینا.</p>
-        <button onclick="showMessage('ویډیو به ژر اضافه شي.')">
+        <p>د ایمان د پیاوړتیا په اړه وینا.</p>
+
+        <button onclick="showMessage('ویډیو به دلته چلېږي.')">
           پیل ▶
         </button>
       </article>
 
-
-      <article class="card media-card">
+      <article class="card">
         <div class="media-icon">▶</div>
         <h3>د والدینو حقوق</h3>
         <p>په اسلام کې د مور او پلار مقام.</p>
-        <button onclick="showMessage('ویډیو به ژر اضافه شي.')">
+
+        <button onclick="showMessage('ویډیو به دلته چلېږي.')">
           پیل ▶
         </button>
       </article>
 
-
-      <article class="card media-card">
+      <article class="card">
         <div class="media-icon">▶</div>
-        <h3>د لمونځ فضیلت</h3>
+        <h3>د لمانځه فضیلت</h3>
         <p>د لمانځه ارزښت او اهمیت.</p>
-        <button onclick="showMessage('ویډیو به ژر اضافه شي.')">
+
+        <button onclick="showMessage('ویډیو به دلته چلېږي.')">
           پیل ▶
         </button>
       </article>
 
     </div>
-
   </div>
-
 </section>
 
 
-<section id="articles" class="section alt">
-
+<!-- ARTICLES -->
+<section id="articles" class="section">
   <div class="container">
 
     <div class="section-head">
-
       <div>
         <span class="eyebrow">اسلامي مقالې</span>
         <h2>علمي او روزنیز مطالب</h2>
       </div>
 
       <span class="section-icon">📚</span>
-
     </div>
-
 
     <div class="cards">
 
@@ -281,61 +849,46 @@
         <p>
           ښه اخلاق د مسلمان د شخصیت مهمه برخه ده.
         </p>
-        <button onclick="showMessage('مقاله به ژر اضافه شي.')">
-          نور ولولئ →
-        </button>
+        <a href="#contact">نور ولولئ →</a>
       </article>
-
 
       <article class="card">
         <h3>د روژې فضیلت</h3>
         <p>
-          روژه د تقوا، صبر او ځان روزنې لوی درس دی.
+          روژه د تقوا، صبر او ځان روزنې درس دی.
         </p>
-        <button onclick="showMessage('مقاله به ژر اضافه شي.')">
-          نور ولولئ →
-        </button>
+        <a href="#contact">نور ولولئ →</a>
       </article>
-
 
       <article class="card">
         <h3>اسلام او د علم ارزښت</h3>
         <p>
-          د علم زده کړه د مسلمان په ژوند کې ځانګړی مقام لري.
+          د علم زده کړه په اسلام کې ځانګړی مقام لري.
         </p>
-        <button onclick="showMessage('مقاله به ژر اضافه شي.')">
-          نور ولولئ →
-        </button>
+        <a href="#contact">نور ولولئ →</a>
       </article>
 
     </div>
-
   </div>
-
 </section>
 
 
-<section id="media" class="section">
-
+<!-- MEDIA -->
+<section id="media" class="section alt">
   <div class="container media-grid">
 
     <div>
       <span class="eyebrow">اسلامي رسنۍ</span>
 
-      <h2>
-        ویډیو او آډیو خپرونې
-      </h2>
+      <h2>ویډیو او آډیو خپرونې</h2>
 
       <p>
-        خپلې خوښې اسلامي ویناوې،
-        تلاوتونه او تعلیمي پروګرامونه
-        په منظم ډول ځای پر ځای کړئ.
+        اسلامي ویناوې، تلاوتونه او تعلیمي
+        پروګرامونه دلته خپرېږي.
       </p>
     </div>
 
-
     <div class="player">
-
       <div class="play">▶</div>
 
       <strong>
@@ -347,79 +900,53 @@
       </span>
 
       <div class="progress"></div>
-
     </div>
 
   </div>
-
 </section>
 
 
-<section id="duas" class="section alt">
-
+<!-- DUAS -->
+<section id="duas" class="section">
   <div class="container">
 
     <div class="section-head">
-
       <div>
         <span class="eyebrow">دعاګانې او اذکار</span>
         <h2>هره ورځ یادونه</h2>
       </div>
 
       <span class="section-icon">🤲</span>
-
     </div>
 
-
     <div class="dua">
-
-      <h3>
-        رَبِّ اغْفِرْ لِي
-      </h3>
-
-      <p>
-        اې زما ربه! ما وبخښه.
-      </p>
-
+      <h3>رَبِّ اغْفِرْ لِي</h3>
+      <p>اې زما ربه! ما وبخښه.</p>
     </div>
 
-
     <div class="dua">
-
-      <h3>
-        رَبِّ زِدْنِي عِلْمًا
-      </h3>
-
-      <p>
-        اې زما ربه! زما علم زیات کړه.
-      </p>
-
+      <h3>رَبِّ زِدْنِي عِلْمًا</h3>
+      <p>اې زما ربه! زما علم زیات کړه.</p>
     </div>
 
   </div>
-
 </section>
 
 
+<!-- CONTACT -->
 <section id="contact" class="section contact">
-
   <div class="container contact-box">
 
     <div>
-
       <span class="eyebrow">اړیکه</span>
 
-      <h2>
-        له موږ سره اړیکه ونیسئ
-      </h2>
+      <h2>له موږ سره اړیکه ونیسئ</h2>
 
       <p>
-        د اسلامي محتوا، وړاندیزونو
-        او همکاریو لپاره خپل پیغام راولېږئ.
+        د اسلامي محتوا، وړاندیزونو او همکاریو
+        لپاره خپل پیغام راولېږئ.
       </p>
-
     </div>
-
 
     <form onsubmit="sendMessage(event)">
 
@@ -437,60 +964,78 @@
 
       <textarea
         required
-        rows="5"
+        rows="4"
         placeholder="ستاسو پیغام"
       ></textarea>
 
-      <button
-        class="btn primary"
-        type="submit"
-      >
+      <button class="btn primary" type="submit">
         پیغام لېږل
       </button>
 
     </form>
 
   </div>
-
 </section>
 
 </main>
 
 
+<!-- FOOTER -->
 <footer>
-
   <div class="container footer">
 
     <div>
-
-      <h3>
-        ☪ Ahmad Abu-dujanah
-      </h3>
-
-      <p>
-        نور اسلامي خپرونې
-      </p>
-
+      <h3>☪ ابودجانه د اسلامي خپرونو مرکز</h3>
+      <p>د دیني پوهې او ښې لارښوونې لپاره.</p>
     </div>
 
-
     <div>
-
       <p>
         © <span id="year"></span>
         ټول حقوق خوندي دي.
       </p>
-
     </div>
 
   </div>
-
 </footer>
 
 
 <div id="toast"></div>
 
-<script src="script.js"></script>
+
+<script>
+  function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("open");
+  }
+
+  document.querySelectorAll("nav a").forEach(function(link){
+    link.addEventListener("click",function(){
+      document.getElementById("navMenu").classList.remove("open");
+    });
+  });
+
+  function showMessage(message){
+    const toast=document.getElementById("toast");
+
+    toast.textContent=message;
+    toast.style.display="block";
+
+    setTimeout(function(){
+      toast.style.display="none";
+    },2600);
+  }
+
+  function sendMessage(event){
+    event.preventDefault();
+
+    showMessage("ستاسو پیغام په بریالیتوب سره ثبت شو.");
+
+    event.target.reset();
+  }
+
+  document.getElementById("year").textContent=
+    new Date().getFullYear();
+</script>
 
 </body>
 </html>
