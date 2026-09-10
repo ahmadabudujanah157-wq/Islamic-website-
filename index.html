@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ps" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نور اسلامي خپرونې</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="#home">☪ <span>نور اسلامي خپرونې</span></a>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav id="navMenu">
+      <a href="#home">کور</a>
+      <a href="#quran">قرآن کریم</a>
+      <a href="#hadith">حدیث</a>
+      <a href="#lectures">ویناوې</a>
+      <a href="#articles">مقالې</a>
+      <a href="#media">رسنۍ</a>
+      <a href="#duas">دعاګانې</a>
+      <a href="#contact">اړیکه</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container hero-content">
+    <div>
+      <span class="badge">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</span>
+      <h1>اسلامي پوهه، <span>رڼا او لارښوونه</span></h1>
+      <p>قرآن کریم، احادیث، اسلامي ویناوې، مقالې، دعاګانې او ګټور دیني مطالب په یوه ښکلي ځای کې.</p>
+      <div class="actions">
+        <a class="btn primary" href="#quran">قرآن کریم وګورئ</a>
+        <a class="btn ghost" href="#lectures">اسلامي ویناوې</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="moon">☪</div>
+      <h3>وَقُل رَّبِّ زِدْنِي عِلْمًا</h3>
+      <p>او ووایه: اې زما ربه! زما علم زیات کړه.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-grid">
+    <div><strong>114</strong><span>سورتونه</span></div>
+    <div><strong>100+</strong><span>احادیث</span></div>
+    <div><strong>50+</strong><span>اسلامي مقالې</span></div>
+    <div><strong>24/7</strong><span>دیني محتوا</span></div>
+  </div>
+</section>
+
+<section id="quran" class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">قرآن کریم</span><h2>د الله تعالی کتاب</h2></div><span class="section-icon">📖</span></div>
+    <div class="cards">
+      <article class="card"><span class="number">01</span><h3>سورة الفاتحة</h3><p>د قرآن کریم لومړی سورت.</p><button onclick="showMessage('د سورة الفاتحة برخه به دلته پرانیستل شي.')">لوستل</button></article>
+      <article class="card"><span class="number">02</span><h3>سورة البقرة</h3><p>د قرآن کریم تر ټولو اوږد سورت.</p><button onclick="showMessage('د سورة البقرة برخه به دلته پرانیستل شي.')">لوستل</button></article>
+      <article class="card"><span class="number">03</span><h3>سورة الإخلاص</h3><p>د توحید په اړه مبارک سورت.</p><button onclick="showMessage('د سورة الإخلاص برخه به دلته پرانیستل شي.')">لوستل</button></article>
+    </div>
+  </div>
+</section>
+
+<section id="hadith" class="section alt">
+  <div class="container quote">
+    <span class="eyebrow">حدیث شریف</span>
+    <h2>إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ</h2>
+    <p>«اعمال د نیتونو له مخې دي.»</p>
+    <small>— صحیح البخاري</small>
+  </div>
+</section>
+
+<section id="lectures" class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">اسلامي ویناوې</span><h2>ګټورې دیني خپرونې</h2></div><span class="section-icon">🎙️</span></div>
+    <div class="cards">
+      <article class="card media-card"><div class="media-icon">▶</div><h3>د ایمان اهمیت</h3><p>د ایمان د پیاوړتیا په اړه لنډه وینا.</p><button onclick="showMessage('ویډیو/آډیو به دلته چلېږي.')">پیل ▶</button></article>
+      <article class="card media-card"><div class="media-icon">▶</div><h3>د والدینو حقوق</h3><p>په اسلام کې د مور او پلار مقام.</p><button onclick="showMessage('ویډیو/آډیو به دلته چلېږي.')">پیل ▶</button></article>
+      <article class="card media-card"><div class="media-icon">▶</div><h3>د لمونځ فضیلت</h3><p>د لمانځه ارزښت او اهمیت.</p><button onclick="showMessage('ویډیو/آډیو به دلته چلېږي.')">پیل ▶</button></article>
+    </div>
+  </div>
+</section>
+
+<section id="articles" class="section alt">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">اسلامي مقالې</span><h2>علمي او روزنیز مطالب</h2></div><span class="section-icon">📚</span></div>
+    <div class="cards">
+      <article class="card"><h3>د ښه اخلاقو اهمیت</h3><p>ښه اخلاق د مسلمان د شخصیت مهمه برخه ده.</p><a href="#" onclick="return false">نور ولولئ →</a></article>
+      <article class="card"><h3>د روژې فضیلت</h3><p>روژه د تقوا، صبر او ځان روزنې لوی درس دی.</p><a href="#" onclick="return false">نور ولولئ →</a></article>
+      <article class="card"><h3>اسلام او د علم ارزښت</h3><p>د علم زده کړه د مسلمان په ژوند کې ځانګړی مقام لري.</p><a href="#" onclick="return false">نور ولولئ →</a></article>
+    </div>
+  </div>
+</section>
+
+<section id="media" class="section">
+  <div class="container media-grid">
+    <div><span class="eyebrow">اسلامي رسنۍ</span><h2>ویډیو او آډیو خپرونې</h2><p>خپلې خوښې اسلامي ویناوې، تلاوتونه او تعلیمي پروګرامونه په منظم ډول ځای پر ځای کړئ.</p></div>
+    <div class="player"><div class="play">▶</div><strong>د خپرونې نوم</strong><span>00:00 / 00:00</span><div class="progress"></div></div>
+  </div>
+</section>
+
+<section id="duas" class="section alt">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">دعاګانې او اذکار</span><h2>هره ورځ یادونه</h2></div><span class="section-icon">🤲</span></div>
+    <div class="dua"><h3>رَبِّ اغْفِرْ لِي</h3><p>اې زما ربه! ما وبخښه.</p></div>
+    <div class="dua"><h3>رَبِّ زِدْنِي عِلْمًا</h3><p>اې زما ربه! زما علم زیات کړه.</p></div>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="container contact-box">
+    <div><span class="eyebrow">اړیکه</span><h2>له موږ سره اړیکه ونیسئ</h2><p>د اسلامي محتوا، وړاندیزونو او همکاریو لپاره خپل پیغام راولېږئ.</p></div>
+    <form onsubmit="sendMessage(event)">
+      <input required type="text" placeholder="ستاسو نوم">
+      <input required type="email" placeholder="ستاسو ایمیل">
+      <textarea required rows="4" placeholder="ستاسو پیغام"></textarea>
+      <button class="btn primary" type="submit">پیغام لېږل</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer">
+    <div><h3>☪ نور اسلامي خپرونې</h3><p>د دیني پوهې او ښې لارښوونې لپاره.</p></div>
+    <div><p>© <span id="year"></span> ټول حقوق خوندي دي.</p></div>
+  </div>
+</footer>
+
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
