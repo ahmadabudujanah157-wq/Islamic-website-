@@ -114,6 +114,16 @@
   <div class="container contact-box">
     <div><span class="eyebrow">اړیکه</span><h2>له موږ سره اړیکه ونیسئ</h2><p>د اسلامي محتوا، وړاندیزونو او همکاریو لپاره خپل پیغام راولېږئ.</p></div>
     <form onsubmit="sendMessage(event)">
+      <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+  <input type="hidden" name="_subject" value="د ویب‌سایټ نوی پیغام">
+  <input type="hidden" name="_captcha" value="false">
+
+  <input required type="text" name="name" placeholder="ستاسو نوم">
+  <input required type="email" name="email" placeholder="ستاسو ایمیل">
+  <textarea required name="message" rows="4" placeholder="ستاسو پیغام"></textarea>
+
+  <button class="btn primary" type="submit">پیغام لېږل</button>
+</form>
       <input required type="text" placeholder="ستاسو نوم">
       <input required type="email" placeholder="ستاسو ایمیل">
       <textarea required rows="4" placeholder="ستاسو پیغام"></textarea>
